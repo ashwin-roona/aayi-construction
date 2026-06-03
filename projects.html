@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — AAYI Construction & Architecture</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text">AAYI</div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">AAYI</a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link active-page">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Start a Project</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <canvas class="page-hero-canvas" id="cityCanvas"></canvas>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a><span>/</span>Projects</div>
+      <h1 class="page-hero-title">
+        <span class="line">OUR</span>
+        <span class="line accent">PORTFOLIO</span>
+      </h1>
+      <p class="page-hero-desc">500+ structures built across 38 countries. Every one a story of ambition realized.</p>
+    </div>
+    <div class="page-hero-scroll"><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- Stats Band -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-band-inner">
+        <div class="band-stat">
+          <span class="band-stat-num">500</span><span class="band-stat-suffix">+</span>
+          <span class="band-stat-label">Projects Completed</span>
+        </div>
+        <div class="band-stat">
+          <span class="band-stat-num">38</span>
+          <span class="band-stat-label">Countries</span>
+        </div>
+        <div class="band-stat">
+          <span class="band-stat-num">$4.2</span><span class="band-stat-suffix">B</span>
+          <span class="band-stat-label">Total Project Value</span>
+        </div>
+        <div class="band-stat">
+          <span class="band-stat-num">98</span><span class="band-stat-suffix">%</span>
+          <span class="band-stat-label">Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <section class="projects-full-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our Work</div>
+        <h2 class="section-title reveal">Signature<br/>Projects</h2>
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="residential">Residential</button>
+          <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+          <button class="filter-btn" data-filter="renovation">Renovation</button>
+        </div>
+      </div>
+
+      <div class="projects-full-grid">
+        <div class="project-card large" data-cat="commercial">
+          <div class="project-img"><div class="img-placeholder p1"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Commercial</span>
+            <h3>Apex Tower — 62-Floor Skyscraper</h3>
+            <span class="project-year">2024 · New York, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="residential">
+          <div class="project-img"><div class="img-placeholder p2"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Residential</span>
+            <h3>Meridian Residences</h3>
+            <span class="project-year">2023 · Los Angeles, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="infrastructure">
+          <div class="project-img"><div class="img-placeholder p3"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Infrastructure</span>
+            <h3>Harbor Bridge Expansion</h3>
+            <span class="project-year">2023 · Portland, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="commercial">
+          <div class="project-img"><div class="img-placeholder p4"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Commercial</span>
+            <h3>Nova Business Park</h3>
+            <span class="project-year">2022 · Chicago, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card large" data-cat="residential">
+          <div class="project-img"><div class="img-placeholder p5"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Residential</span>
+            <h3>Skyline Villas Complex</h3>
+            <span class="project-year">2022 · Dubai, UAE</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="infrastructure">
+          <div class="project-img"><div class="img-placeholder p6"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Infrastructure</span>
+            <h3>Metro Transit Hub — Phase II</h3>
+            <span class="project-year">2021 · Portland, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="commercial">
+          <div class="project-img"><div class="img-placeholder p7"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Commercial</span>
+            <h3>Waterfront Tower Complex</h3>
+            <span class="project-year">2021 · Abu Dhabi, UAE</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="renovation">
+          <div class="project-img"><div class="img-placeholder p8"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Renovation</span>
+            <h3>Heritage Bank Restoration</h3>
+            <span class="project-year">2020 · London, UK</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card large" data-cat="infrastructure">
+          <div class="project-img"><div class="img-placeholder p9"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Infrastructure</span>
+            <h3>Alpine Highway Corridor</h3>
+            <span class="project-year">2020 · Switzerland</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="residential">
+          <div class="project-img"><div class="img-placeholder p10"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Residential</span>
+            <h3>Canyon Ridge Estates</h3>
+            <span class="project-year">2019 · San Francisco, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="commercial">
+          <div class="project-img"><div class="img-placeholder p11"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Commercial</span>
+            <h3>Zenith Convention Center</h3>
+            <span class="project-year">2019 · Singapore</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+        <div class="project-card" data-cat="renovation">
+          <div class="project-img"><div class="img-placeholder p12"></div></div>
+          <div class="project-info">
+            <span class="project-cat">Renovation</span>
+            <h3>Industrial Loft Conversion</h3>
+            <span class="project-year">2018 · Brooklyn, USA</span>
+          </div>
+          <div class="project-overlay"><span>View Project →</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section class="case-study-section">
+    <div class="container">
+      <div class="case-study-grid">
+        <div class="case-study-visual">
+          <div class="case-study-img">
+            <div class="img-placeholder case-img"></div>
+          </div>
+          <div class="case-study-badge">
+            <span>★ Global Construction Excellence Award 2024</span>
+          </div>
+        </div>
+        <div class="case-study-content">
+          <div class="case-study-tag">Featured Case Study</div>
+          <h2 class="case-study-title">Apex Tower —<br/>A New Skyline Defined</h2>
+          <p>New York City's newest supertall rises 62 floors and 278 meters above Midtown Manhattan. Apex Tower required solving extraordinary engineering challenges: a 40-meter deep bedrock foundation, a full-floor sky lobby at level 40, and a structural system capable of withstanding 120 mph winds without perceptible sway.</p>
+          <p>Our team of 400 engineers and specialists delivered the project 3 weeks ahead of schedule, under budget, with zero lost-time safety incidents — a first in AAYI's history at this scale.</p>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <span class="metric-num">62</span>
+              <span class="metric-label">Floors</span>
+            </div>
+            <div class="case-metric">
+              <span class="metric-num">278m</span>
+              <span class="metric-label">Height</span>
+            </div>
+            <div class="case-metric">
+              <span class="metric-num">$1.1B</span>
+              <span class="metric-label">Value</span>
+            </div>
+          </div>
+          <a href="contact.html" class="btn-primary large">Discuss a Similar Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-tag">Client Stories</div>
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"AAYI delivered our 62-story headquarters 3 weeks ahead of schedule. The quality is exceptional — our tenants constantly comment on the craftsmanship. They are in a different league entirely."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>Marcus Chen</strong>
+                <span>CEO, Vertex Capital Group</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"The attention to detail in our residential complex was beyond anything we've experienced in 20 years of development. AAYI truly understands what luxury construction means."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>Sarah Mitchell</strong>
+                <span>Director, Apex Living Developments</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"Our bridge project involved complex engineering challenges that stumped two previous firms. AAYI's team solved them with elegance and precision. A truly world-class organization."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>James Okafor</strong>
+                <span>Infrastructure Director, City of Portland</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevBtn">←</button>
+          <div class="slider-dots" id="sliderDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slider-btn" id="nextBtn">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Your Project<br/>Belongs Here</h2>
+        <p>500+ completed projects and counting. Let's make yours the next landmark.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn-primary large">Start a Conversation</a>
+          <a href="services.html" class="btn-ghost large">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">AAYI</a>
+          <p>Building landmarks that define skylines and stand the test of time.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Li</a>
+            <a href="#" class="social-link">Tw</a>
+            <a href="#" class="social-link">Ig</a>
+            <a href="#" class="social-link">Yt</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Commercial Construction</a>
+            <a href="services.html">Architecture & Design</a>
+            <a href="services.html">Infrastructure</a>
+            <a href="services.html">Residential</a>
+            <a href="services.html">Renovation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">News</a>
+            <a href="about.html#awards">Awards</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Partnerships</a>
+            <a href="contact.html">Media</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 AAYI Construction. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

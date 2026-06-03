@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — AAYI Construction & Architecture</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text">AAYI</div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">AAYI</a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link active-page">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Start a Project</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <canvas class="page-hero-canvas" id="blueprintCanvas"></canvas>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a><span>/</span>About</div>
+      <h1 class="page-hero-title">
+        <span class="line">WHO</span>
+        <span class="line accent">WE ARE</span>
+      </h1>
+      <p class="page-hero-desc">16 years of precision, passion, and purpose in construction.</p>
+    </div>
+    <div class="page-hero-scroll"><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="section-tag">Our Foundation</div>
+          <h2 class="section-title reveal">Built on Trust,<br/>Driven by Excellence</h2>
+          <p class="story-text reveal">Founded in 2008 by a team of visionary engineers and architects, AAYI was built on a single conviction: that the built environment shapes human experience. Every structure we create is a testament to that belief.</p>
+          <p class="story-text reveal">Over 16 years, we've grown from a boutique construction firm into one of the most respected names in commercial, residential, and infrastructure development — delivering projects that define skylines and communities.</p>
+          <p class="story-text reveal">Our team of 850+ professionals combines deep engineering expertise with creative architectural vision, ensuring every project exceeds expectations on quality, timeline, and budget.</p>
+          <div class="story-stats reveal">
+            <div class="story-stat">
+              <span class="story-stat-num">850+</span>
+              <span class="story-stat-label">Team Members</span>
+            </div>
+            <div class="story-stat">
+              <span class="story-stat-num">38</span>
+              <span class="story-stat-label">Countries</span>
+            </div>
+            <div class="story-stat">
+              <span class="story-stat-num">$4.2B</span>
+              <span class="story-stat-label">Project Value</span>
+            </div>
+          </div>
+        </div>
+        <div class="story-right">
+          <div class="story-image-stack">
+            <div class="story-badge-float">
+              <div class="story-badge">
+                <span class="badge-year">2008</span>
+                <span class="badge-label">Est.</span>
+              </div>
+            </div>
+            <div class="story-img main-img">
+              <div class="img-placeholder story-main-placeholder"></div>
+            </div>
+            <div class="story-img secondary-img">
+              <div class="img-placeholder story-sec-placeholder"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header center-header">
+        <div class="section-tag">Our DNA</div>
+        <h2 class="section-title reveal">Core Values That<br/>Drive Every Decision</h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M40 8L8 28V52L40 72L72 52V28L40 8Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M40 8V72M8 28L72 52M72 28L8 52" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <circle cx="40" cy="40" r="8" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Integrity First</h3>
+          <p>We build relationships on honesty and transparency. Every commitment we make — to clients, partners, and communities — is one we keep without exception.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="12" width="56" height="56" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 40H68M40 12V68" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+              <path d="M24 24L40 40L56 24M24 56L40 40L56 56" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Precision Engineering</h3>
+          <p>Millimeter accuracy. Mathematical certainty. Our engineering standards exceed industry benchmarks because structures that bear lives demand nothing less than perfection.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="28" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M40 12V28M40 52V68M12 40H28M52 40H68" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="40" cy="40" r="6" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>Sustainable Future</h3>
+          <p>Every material choice, every design decision considers our environmental footprint. We build for generations — not just for today's occupants, but for the planet they'll inherit.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 60V30L40 10L60 30V60H20Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M30 60V44H50V60" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 30H60" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+              <circle cx="40" cy="26" r="4" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Community Legacy</h3>
+          <p>The structures we build become part of the fabric of communities. We take that responsibility seriously — creating spaces that elevate human experience for decades to come.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Leadership</div>
+        <h2 class="section-title reveal">The Minds<br/>Behind AAYI</h2>
+        <p class="section-subdesc reveal">Our leadership team brings together decades of experience from the world's most demanding construction environments.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-img-wrap">
+            <div class="img-placeholder team-ph t1"></div>
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>David Harrison</h3>
+            <span class="team-role">CEO & Co-Founder</span>
+            <p>40+ years shaping megaprojects across 6 continents. Visionary behind AAYI's global expansion.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img-wrap">
+            <div class="img-placeholder team-ph t2"></div>
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>Priya Nakamura</h3>
+            <span class="team-role">Chief Architect</span>
+            <p>Award-winning designer blending aesthetic vision with structural necessity and sustainable practice.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img-wrap">
+            <div class="img-placeholder team-ph t3"></div>
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>Marcus Reeves</h3>
+            <span class="team-role">Chief Engineer</span>
+            <p>Structural engineer behind 12 record-breaking tall buildings. MIT graduate, PE license in 8 states.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img-wrap">
+            <div class="img-placeholder team-ph t4"></div>
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>Elena Vasquez</h3>
+            <span class="team-role">VP, Sustainability</span>
+            <p>Pioneering green building standards in commercial construction. LEED Fellow, GBC advisory board member.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img-wrap">
+            <div class="img-placeholder team-ph t5"></div>
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>James Osei</h3>
+            <span class="team-role">Director, Infrastructure</span>
+            <p>Leading mega-infrastructure projects across 3 continents. $2B+ in delivered transport projects.</p>
+          </div>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-img-wrap">
+            <div class="img-placeholder team-ph t6"></div>
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#">Li</a>
+                <a href="#">Tw</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>Sarah Kim</h3>
+            <span class="team-role">Head of Innovation</span>
+            <p>Driving digital transformation and BIM adoption. Former research lead at MIT Media Lab.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header center-header">
+        <div class="section-tag">Our Journey</div>
+        <h2 class="section-title reveal">16 Years of<br/>Building History</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2008</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Foundation</h3>
+            <p>AAYI is founded in New York by David Harrison and Priya Nakamura. First project: a 12-story mixed-use development in Brooklyn delivering 240 residential units.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2011</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>First Landmark</h3>
+            <p>Completion of the Meridian Tower — a 38-story commercial skyscraper that establishes AAYI as a major player in the NYC skyline and wins the AIA Award for structural innovation.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2014</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>International Expansion</h3>
+            <p>AAYI opens offices in London and Dubai. First international project: a $300M waterfront development in Abu Dhabi, completed 6 weeks ahead of schedule.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2017</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Infrastructure Division Launch</h3>
+            <p>Dedicated infrastructure division opens. Wins landmark $800M contract for the Portland Metro Transit Hub expansion — AAYI's largest project to date.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Sustainability Pledge</h3>
+            <p>AAYI commits to net-zero operations by 2035. Launches green construction program that reduces material waste by 40% and earns LEED Platinum certification.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-dot active-dot"></div>
+          <div class="timeline-content">
+            <h3>500+ Projects Milestone</h3>
+            <p>AAYI surpasses 500 completed projects across 38 countries. Apex Tower — our 62-story flagship — wins the Global Construction Excellence Award from the ICF.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="awards-section" id="awards">
+    <canvas class="awards-canvas" id="awardsCanvas"></canvas>
+    <div class="container">
+      <div class="section-header center-header">
+        <div class="section-tag light">Recognition</div>
+        <h2 class="section-title reveal-light" style="color:var(--white)">Awards &<br/>Certifications</h2>
+      </div>
+      <div class="awards-grid">
+        <div class="award-item reveal-light">
+          <div class="award-year">2024</div>
+          <h3>Global Construction Excellence Award</h3>
+          <span>International Construction Federation</span>
+        </div>
+        <div class="award-item reveal-light">
+          <div class="award-year">2023</div>
+          <h3>Best Sustainable Build — Commercial</h3>
+          <span>Green Building Council Americas</span>
+        </div>
+        <div class="award-item reveal-light">
+          <div class="award-year">2023</div>
+          <h3>Engineering Innovation Prize</h3>
+          <span>Structural Engineers Association of NY</span>
+        </div>
+        <div class="award-item reveal-light">
+          <div class="award-year">2022</div>
+          <h3>Top 50 Construction Firms Worldwide</h3>
+          <span>ENR Magazine Annual Rankings</span>
+        </div>
+        <div class="award-item reveal-light">
+          <div class="award-year">2021</div>
+          <h3>Safety Excellence Award</h3>
+          <span>National Safety Council</span>
+        </div>
+        <div class="award-item reveal-light">
+          <div class="award-year">2020</div>
+          <h3>LEED Platinum Certified Operations</h3>
+          <span>U.S. Green Building Council</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Ready to Build<br/>Something Extraordinary?</h2>
+        <p>Join 500+ clients who trusted AAYI to bring their most ambitious visions to life.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn-primary large">Start Your Project</a>
+          <a href="projects.html" class="btn-ghost large">View Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">AAYI</a>
+          <p>Building landmarks that define skylines and stand the test of time.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Li</a>
+            <a href="#" class="social-link">Tw</a>
+            <a href="#" class="social-link">Ig</a>
+            <a href="#" class="social-link">Yt</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Commercial Construction</a>
+            <a href="services.html">Architecture & Design</a>
+            <a href="services.html">Infrastructure</a>
+            <a href="services.html">Residential</a>
+            <a href="services.html">Renovation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">News</a>
+            <a href="about.html#awards">Awards</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Partnerships</a>
+            <a href="contact.html">Media</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 AAYI Construction. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

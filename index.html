@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AAYI — Construction & Architecture</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text">AAYI</div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">AAYI</a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="services.html#process" class="nav-link">Process</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Start a Project</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="services.html#process">Process</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag">Est. 2008 — Excellence in Construction</div>
+      <h1 class="hero-title">
+        <span class="line" data-scroll><span>WE BUILD</span></span>
+        <span class="line accent" data-scroll><span>THE FUTURE</span></span>
+        <span class="line" data-scroll><span>IN CONCRETE</span></span>
+      </h1>
+      <p class="hero-desc" data-scroll>Premium construction & architectural solutions that stand the test of time. From concept to completion.</p>
+      <div class="hero-cta" data-scroll>
+        <a href="projects.html" class="btn-primary large">View Our Work</a>
+        <a href="about.html" class="btn-ghost large">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-count="500">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="16">0</span><span class="stat-suffix">yrs</span>
+        <span class="stat-label">Experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>CONSTRUCTION</span><span class="dot">●</span>
+      <span>ARCHITECTURE</span><span class="dot">●</span>
+      <span>ENGINEERING</span><span class="dot">●</span>
+      <span>RENOVATION</span><span class="dot">●</span>
+      <span>INFRASTRUCTURE</span><span class="dot">●</span>
+      <span>DESIGN & BUILD</span><span class="dot">●</span>
+      <span>CONSTRUCTION</span><span class="dot">●</span>
+      <span>ARCHITECTURE</span><span class="dot">●</span>
+      <span>ENGINEERING</span><span class="dot">●</span>
+      <span>RENOVATION</span><span class="dot">●</span>
+      <span>INFRASTRUCTURE</span><span class="dot">●</span>
+      <span>DESIGN & BUILD</span><span class="dot">●</span>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-tag">Who We Are</div>
+          <h2 class="section-title reveal">Building Tomorrow's<br/>Landmarks Today</h2>
+          <p class="about-text reveal">AAYI is a premier construction firm specializing in large-scale commercial, residential, and infrastructure projects. With 16 years of proven expertise, we transform ambitious visions into architectural masterpieces.</p>
+          <p class="about-text reveal">We combine cutting-edge engineering with sustainable practices to deliver structures that inspire, endure, and define skylines.</p>
+          <a href="about.html" class="btn-primary reveal">Our Full Story</a>
+        </div>
+        <div class="about-right">
+          <div class="about-image-wrap">
+            <div class="about-img parallax-img" id="aboutImg">
+              <div class="img-placeholder about-placeholder"></div>
+            </div>
+            <div class="about-badge">
+              <span class="badge-num">500+</span>
+              <span class="badge-text">Completed Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">What We Do</div>
+        <h2 class="section-title reveal">Our Core<br/>Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-index="01">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="30" width="50" height="25" stroke="currentColor" stroke-width="2"/>
+              <path d="M5 30L30 8L55 30" stroke="currentColor" stroke-width="2"/>
+              <rect x="22" y="38" width="16" height="17" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Commercial Construction</h3>
+          <p>Office towers, retail centers, hospitality, and mixed-use developments built to the highest standards.</p>
+          <a href="services.html" class="service-link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card" data-index="02">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="30" r="20" stroke="currentColor" stroke-width="2"/>
+              <path d="M30 10V30L42 42" stroke="currentColor" stroke-width="2"/>
+              <circle cx="30" cy="30" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Architecture & Design</h3>
+          <p>Innovative architectural design that balances aesthetics, functionality, and sustainability.</p>
+          <a href="services.html" class="service-link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card" data-index="03">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="44" height="44" stroke="currentColor" stroke-width="2"/>
+              <line x1="8" y1="22" x2="52" y2="22" stroke="currentColor" stroke-width="2"/>
+              <line x1="22" y1="8" x2="22" y2="52" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Infrastructure</h3>
+          <p>Roads, bridges, utilities, and public works infrastructure engineered for longevity.</p>
+          <a href="services.html" class="service-link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card" data-index="04">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 50H50M15 50V25M45 50V25M10 25H50M20 25V15H40V25" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Residential Projects</h3>
+          <p>Luxury homes, apartment complexes, and residential communities crafted with precision.</p>
+          <a href="services.html" class="service-link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card" data-index="05">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 50L30 10L50 50H10Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 50V35H40V50" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Renovation & Restoration</h3>
+          <p>Breathing new life into existing structures while preserving their character and heritage.</p>
+          <a href="services.html" class="service-link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card" data-index="06">
+          <div class="service-icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 8L8 22V50H52V22L30 8Z" stroke="currentColor" stroke-width="2"/>
+              <circle cx="30" cy="32" r="8" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Project Management</h3>
+          <p>End-to-end project oversight ensuring on-time, on-budget delivery with zero compromise.</p>
+          <a href="services.html" class="service-link">Learn More <span>→</span></a>
+        </div>
+      </div>
+      <div class="services-all-cta reveal">
+        <a href="services.html" class="btn-ghost large">Explore All Services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why AAYI Section -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Why AAYI</div>
+        <h2 class="section-title reveal">The AAYI<br/>Difference</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-num">01</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4L4 16V32L24 44L44 32V16L24 4Z" stroke="currentColor" stroke-width="1.5"/><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Decades of Mastery</h3>
+          <p>16 years tackling the world's most complex construction challenges has forged an unmatched depth of expertise across every building typology and climate zone.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">02</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" stroke="currentColor" stroke-width="1.5"/><path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Zero Compromise Quality</h3>
+          <p>Every material, every joint, every finish is held to exacting standards. Our 98% client satisfaction rate over 500+ projects speaks for itself.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">03</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M24 12V24L32 32" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>On-Time. Every Time.</h3>
+          <p>97% on-time delivery rate across 16 years. We understand that delays cost money and reputation — yours and ours. Our schedules are commitments, not estimates.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">04</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4C13 4 4 13 4 24C4 35 13 44 24 44" stroke="currentColor" stroke-width="1.5"/><path d="M24 44C35 44 44 35 44 24" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/><path d="M24 14V24L30 30" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Sustainable by Design</h3>
+          <p>Green building isn't an afterthought — it's embedded in every specification, process, and material selection from day one. LEED Platinum certified operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Feature Section -->
+  <section class="feature-3d" id="feature3d">
+    <canvas id="featureCanvas"></canvas>
+    <div class="feature-content">
+      <div class="section-tag light">Our Approach</div>
+      <h2 class="feature-title reveal-light">Precision Engineering<br/>Meets Visionary Design</h2>
+      <p class="feature-desc reveal-light">Every structure we build is a convergence of mathematical precision and creative vision — engineered to last centuries.</p>
+      <a href="services.html" class="btn-ghost large reveal-light" style="margin-top:32px">Explore Our Process →</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our Work</div>
+        <h2 class="section-title reveal">Signature<br/>Projects</h2>
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="residential">Residential</button>
+          <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card large" data-cat="commercial">
+          <div class="project-img">
+            <div class="img-placeholder p1"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Commercial</span>
+            <h3>Apex Tower — 62-Floor Skyscraper</h3>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-overlay">
+            <span>View Project →</span>
+          </div>
+        </div>
+        <div class="project-card" data-cat="residential">
+          <div class="project-img">
+            <div class="img-placeholder p2"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Residential</span>
+            <h3>Meridian Residences</h3>
+            <span class="project-year">2023</span>
+          </div>
+          <div class="project-overlay">
+            <span>View Project →</span>
+          </div>
+        </div>
+        <div class="project-card" data-cat="infrastructure">
+          <div class="project-img">
+            <div class="img-placeholder p3"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Infrastructure</span>
+            <h3>Harbor Bridge Expansion</h3>
+            <span class="project-year">2023</span>
+          </div>
+          <div class="project-overlay">
+            <span>View Project →</span>
+          </div>
+        </div>
+        <div class="project-card" data-cat="commercial">
+          <div class="project-img">
+            <div class="img-placeholder p4"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Commercial</span>
+            <h3>Nova Business Park</h3>
+            <span class="project-year">2022</span>
+          </div>
+          <div class="project-overlay">
+            <span>View Project →</span>
+          </div>
+        </div>
+        <div class="project-card" data-cat="residential">
+          <div class="project-img">
+            <div class="img-placeholder p5"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Residential</span>
+            <h3>Skyline Villas Complex</h3>
+            <span class="project-year">2022</span>
+          </div>
+          <div class="project-overlay">
+            <span>View Project →</span>
+          </div>
+        </div>
+        <div class="project-card large" data-cat="infrastructure">
+          <div class="project-img">
+            <div class="img-placeholder p6"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Infrastructure</span>
+            <h3>Metro Transit Hub — Phase II</h3>
+            <span class="project-year">2021</span>
+          </div>
+          <div class="project-overlay">
+            <span>View Project →</span>
+          </div>
+        </div>
+      </div>
+      <div class="projects-cta reveal">
+        <a href="projects.html" class="btn-primary large">View Full Portfolio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Showcase -->
+  <section class="parallax-showcase">
+    <div class="parallax-layer" id="parallaxBg"></div>
+    <div class="parallax-content">
+      <h2 class="parallax-title reveal-light">500+ Structures.<br/>One Legacy.</h2>
+      <p class="reveal-light">From foundations to skylines — AAYI builds what endures.</p>
+      <a href="about.html" class="btn-ghost large reveal-light" style="margin-top:40px">Our Story →</a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-tag">Client Stories</div>
+      <h2 class="section-title reveal">What Our Clients Say</h2>
+      <div class="testimonials-slider">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"AAYI delivered our 42-story headquarters 3 weeks ahead of schedule. The quality is exceptional — our tenants constantly comment on the craftsmanship."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>Marcus Chen</strong>
+                <span>CEO, Vertex Capital Group</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"The attention to detail in our residential complex was beyond anything we've experienced. AAYI truly understands what luxury construction means."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>Sarah Mitchell</strong>
+                <span>Director, Apex Living Developments</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-quote">"Our bridge project involved complex engineering challenges. AAYI's team solved them with elegance and precision. A truly world-class firm."</div>
+            <div class="testimonial-author">
+              <div class="author-avatar"></div>
+              <div>
+                <strong>James Okafor</strong>
+                <span>Infrastructure Director, City of Portland</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevBtn">←</button>
+          <div class="slider-dots" id="sliderDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slider-btn" id="nextBtn">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-bg-canvas" id="contactCanvas"></div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-tag light">Get In Touch</div>
+          <h2 class="contact-title reveal-light">Ready to Build<br/>Something Great?</h2>
+          <p class="reveal-light">Tell us about your project. Our team will respond within 24 hours.</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>1200 Industrial Blvd, Suite 500<br/>New York, NY 10001</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span>+1 (212) 555-0147</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <span>projects@AAYI.build</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" placeholder="Your Company" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label>Project Type</label>
+              <select>
+                <option value="">Select a service...</option>
+                <option>Commercial Construction</option>
+                <option>Architecture & Design</option>
+                <option>Infrastructure</option>
+                <option>Residential</option>
+                <option>Renovation</option>
+                <option>Project Management</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Project Details</label>
+              <textarea rows="4" placeholder="Tell us about your project, timeline, and budget..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary large full-width">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">AAYI</a>
+          <p>Building landmarks that define skylines and stand the test of time.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Li</a>
+            <a href="#" class="social-link">Tw</a>
+            <a href="#" class="social-link">Ig</a>
+            <a href="#" class="social-link">Yt</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Commercial Construction</a>
+            <a href="services.html">Architecture & Design</a>
+            <a href="services.html">Infrastructure</a>
+            <a href="services.html">Residential</a>
+            <a href="services.html">Renovation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">News</a>
+            <a href="about.html#awards">Awards</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Partnerships</a>
+            <a href="contact.html">Media Inquiries</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 AAYI Construction. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

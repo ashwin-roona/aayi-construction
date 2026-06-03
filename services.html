@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — AAYI Construction & Architecture</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text">AAYI</div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">AAYI</a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link active-page">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Start a Project</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <canvas class="page-hero-canvas" id="structuralCanvas"></canvas>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a><span>/</span>Services</div>
+      <h1 class="page-hero-title">
+        <span class="line">WHAT</span>
+        <span class="line accent">WE BUILD</span>
+      </h1>
+      <p class="page-hero-desc">End-to-end construction excellence across every discipline and scale.</p>
+    </div>
+    <div class="page-hero-scroll"><div class="scroll-line"></div></div>
+  </section>
+
+  <!-- Services Intro -->
+  <section class="services-intro-section">
+    <div class="container">
+      <div class="services-intro-grid">
+        <div>
+          <div class="section-tag">What We Do</div>
+          <h2 class="section-title reveal">Six Core<br/>Disciplines</h2>
+        </div>
+        <div class="services-intro-text reveal">
+          <p>From the first sketch to the final inspection, AAYI delivers construction excellence across six core service areas. Each discipline is backed by specialist teams, proprietary processes, and a relentless commitment to quality that has earned us a 98% client satisfaction rate over 16 years.</p>
+          <p>Whether your project is a 60-story tower, a highway interchange, or a luxury residential community, our integrated approach ensures seamless delivery from concept to completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Detail -->
+  <section class="services-detail-section">
+    <div class="services-detail-list">
+
+      <div class="service-detail-item">
+        <div class="service-detail-visual">
+          <div class="img-placeholder sd1"></div>
+          <div class="service-detail-visual-overlay">
+            <span class="sd-num">01</span>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="section-tag">Commercial</div>
+          <h3>Commercial<br/>Construction</h3>
+          <p>Office towers, retail centers, hospitality complexes, and mixed-use developments built to the highest international standards. We manage every phase — from ground-breaking to ribbon-cutting — with zero compromise on quality or timeline.</p>
+          <ul class="service-features">
+            <li>High-rise & supertall structures (up to 80 floors)</li>
+            <li>Mixed-use developments & urban regeneration</li>
+            <li>Hospitality: hotels, resorts, convention centers</li>
+            <li>Retail parks, shopping centers & anchor stores</li>
+            <li>Data centers & mission-critical facilities</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:32px">Get a Consultation →</a>
+        </div>
+      </div>
+
+      <div class="service-detail-item reversed">
+        <div class="service-detail-visual">
+          <div class="img-placeholder sd2"></div>
+          <div class="service-detail-visual-overlay">
+            <span class="sd-num">02</span>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="section-tag">Design</div>
+          <h3>Architecture<br/>& Design</h3>
+          <p>Innovative architectural design that balances bold aesthetics with functional efficiency and long-term sustainability. Our award-winning architects craft buildings that inspire occupants, impress observers, and outlast generations.</p>
+          <ul class="service-features">
+            <li>Concept design & schematic development</li>
+            <li>3D modeling, BIM & virtual walkthroughs</li>
+            <li>Interior architecture & space planning</li>
+            <li>Landscape & exterior environments</li>
+            <li>Regulatory compliance & planning submissions</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:32px">Get a Consultation →</a>
+        </div>
+      </div>
+
+      <div class="service-detail-item">
+        <div class="service-detail-visual">
+          <div class="img-placeholder sd3"></div>
+          <div class="service-detail-visual-overlay">
+            <span class="sd-num">03</span>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="section-tag">Infrastructure</div>
+          <h3>Infrastructure<br/>Engineering</h3>
+          <p>Roads, bridges, rail, utilities, and public works infrastructure engineered for longevity and resilience. Our infrastructure teams have delivered $1.2B+ in public works projects across three continents.</p>
+          <ul class="service-features">
+            <li>Highway, road & interchange construction</li>
+            <li>Bridge design, fabrication & installation</li>
+            <li>Rail & metro transit systems</li>
+            <li>Ports, airports & logistics terminals</li>
+            <li>Utilities: water, power, telecoms infrastructure</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:32px">Get a Consultation →</a>
+        </div>
+      </div>
+
+      <div class="service-detail-item reversed">
+        <div class="service-detail-visual">
+          <div class="img-placeholder sd4"></div>
+          <div class="service-detail-visual-overlay">
+            <span class="sd-num">04</span>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="section-tag">Residential</div>
+          <h3>Residential<br/>Projects</h3>
+          <p>Luxury homes, apartment complexes, and residential communities crafted with precision and care. From single-family masterpieces to thousand-unit developments, we deliver living spaces of enduring quality.</p>
+          <ul class="service-features">
+            <li>Ultra-premium custom homes & estates</li>
+            <li>Apartment & condominium towers</li>
+            <li>Master-planned residential communities</li>
+            <li>Senior living & affordable housing</li>
+            <li>Student accommodations & co-living</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:32px">Get a Consultation →</a>
+        </div>
+      </div>
+
+      <div class="service-detail-item">
+        <div class="service-detail-visual">
+          <div class="img-placeholder sd5"></div>
+          <div class="service-detail-visual-overlay">
+            <span class="sd-num">05</span>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="section-tag">Renovation</div>
+          <h3>Renovation &<br/>Restoration</h3>
+          <p>Breathing new life into existing structures while preserving their character, heritage, and structural integrity. Our specialist teams handle everything from cosmetic upgrades to full structural overhauls.</p>
+          <ul class="service-features">
+            <li>Historic building restoration & preservation</li>
+            <li>Full building refurbishment & fitout</li>
+            <li>Structural upgrades & seismic retrofits</li>
+            <li>Adaptive reuse of industrial buildings</li>
+            <li>MEP systems replacement & modernization</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:32px">Get a Consultation →</a>
+        </div>
+      </div>
+
+      <div class="service-detail-item reversed">
+        <div class="service-detail-visual">
+          <div class="img-placeholder sd6"></div>
+          <div class="service-detail-visual-overlay">
+            <span class="sd-num">06</span>
+          </div>
+        </div>
+        <div class="service-detail-content">
+          <div class="section-tag">Management</div>
+          <h3>Project<br/>Management</h3>
+          <p>End-to-end project oversight ensuring on-time, on-budget delivery with zero compromise on scope or quality. Our PMs have managed over $4B in project value using proprietary scheduling and risk management frameworks.</p>
+          <ul class="service-features">
+            <li>Full lifecycle project governance</li>
+            <li>Cost control & value engineering</li>
+            <li>Risk identification & mitigation</li>
+            <li>Contractor procurement & management</li>
+            <li>Quality assurance & handover documentation</li>
+          </ul>
+          <a href="contact.html" class="btn-primary" style="margin-top:32px">Get a Consultation →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">How We Work</div>
+        <h2 class="section-title reveal">Our Proven<br/>Process</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step" data-step="01">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Discovery & Consultation</h3>
+            <p>We begin with an in-depth consultation to understand your vision, requirements, budget, and timeline. Every great structure starts with a great conversation. We assign a dedicated project lead from day one.</p>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="process-step" data-step="02">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Design & Engineering</h3>
+            <p>Our architects and engineers collaborate on detailed plans, 3D BIM models, and structural blueprints. Full regulatory compliance, planning submissions, and permit management are handled end-to-end.</p>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="process-step" data-step="03">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Procurement & Mobilization</h3>
+            <p>Strategic procurement of materials and subcontractors using our vetted global supply chain. Site mobilization with full safety management systems and environmental controls in place before a single shovel breaks ground.</p>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="process-step" data-step="04">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Construction & QA</h3>
+            <p>Our skilled teams execute with precision using premium materials and industry-leading techniques. Rigorous quality checks at every stage with real-time progress reporting to clients via our project portal.</p>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="process-step" data-step="05">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Delivery & Aftercare</h3>
+            <p>We deliver on time, on budget, and stand behind our work with comprehensive 10-year structural warranty and ongoing maintenance support. Client success doesn't end at handover — it begins there.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="tech-section">
+    <div class="container">
+      <div class="tech-header">
+        <div class="section-tag">Our Tools</div>
+        <h2 class="section-title reveal">Technologies &<br/>Capabilities</h2>
+        <p class="tech-intro reveal">We invest heavily in construction technology to deliver faster, smarter, and more accurate results for our clients. Our digital construction stack is among the most advanced in the industry.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card reveal">
+          <div class="tech-icon">⬡</div>
+          <h4>BIM Level 3</h4>
+          <p>Full 3D Building Information Modeling with clash detection, 4D scheduling, and 5D cost integration.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">◈</div>
+          <h4>Digital Twin</h4>
+          <p>Real-time digital replicas of structures enabling predictive maintenance and lifecycle optimization.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">⬭</div>
+          <h4>Drone Surveying</h4>
+          <p>LiDAR-equipped drones for centimeter-accurate topographic surveys and site progress monitoring.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">⊕</div>
+          <h4>Modular Construction</h4>
+          <p>Off-site prefabrication reducing on-site time by up to 40% and improving quality control.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">◉</div>
+          <h4>Structural Analysis</h4>
+          <p>Finite Element Analysis (FEA) and seismic simulation for structures in any geologic condition.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">⬔</div>
+          <h4>Green Materials Lab</h4>
+          <p>In-house testing facility for sustainable materials including low-carbon concrete and recycled steel.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">◫</div>
+          <h4>Real-Time Monitoring</h4>
+          <p>IoT sensor networks providing live structural health data throughout construction and post-handover.</p>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-icon">⬗</div>
+          <h4>AI Project Controls</h4>
+          <p>Machine learning algorithms for schedule forecasting, risk prediction, and resource optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="industries-section">
+    <div class="container">
+      <div class="section-header center-header">
+        <div class="section-tag">Sectors</div>
+        <h2 class="section-title reveal">Industries<br/>We Serve</h2>
+      </div>
+      <div class="industries-grid">
+        <div class="industry-card reveal">
+          <div class="industry-icon">🏗</div>
+          <h3>Commercial & Office</h3>
+          <p>Corporate headquarters, business parks, and Class A office towers that set the standard for workplace design.</p>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Hospitals, medical centers, and research facilities built to the strictest healthcare construction standards.</p>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon">🎓</div>
+          <h3>Education</h3>
+          <p>University campuses, schools, and learning centers that inspire students and endure decades of use.</p>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon">✈</div>
+          <h3>Transportation</h3>
+          <p>Airports, transit hubs, ports, and logistics centers that keep economies moving efficiently.</p>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon">🏨</div>
+          <h3>Hospitality & Leisure</h3>
+          <p>World-class hotels, resorts, stadiums, and entertainment venues that create unforgettable experiences.</p>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon">⚡</div>
+          <h3>Energy & Industrial</h3>
+          <p>Power plants, renewable energy infrastructure, and industrial facilities built for performance and safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2 class="cta-title">Let's Discuss<br/>Your Project</h2>
+        <p>Our team is ready to bring your vision to life. Get a free consultation within 48 hours.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn-primary large">Get a Free Quote</a>
+          <a href="projects.html" class="btn-ghost large">See Our Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">AAYI</a>
+          <p>Building landmarks that define skylines and stand the test of time.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Li</a>
+            <a href="#" class="social-link">Tw</a>
+            <a href="#" class="social-link">Ig</a>
+            <a href="#" class="social-link">Yt</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Commercial Construction</a>
+            <a href="services.html">Architecture & Design</a>
+            <a href="services.html">Infrastructure</a>
+            <a href="services.html">Residential</a>
+            <a href="services.html">Renovation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">News</a>
+            <a href="about.html#awards">Awards</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Partnerships</a>
+            <a href="contact.html">Media</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 AAYI Construction. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

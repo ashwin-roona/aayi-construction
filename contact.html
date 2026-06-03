@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — AAYI Construction & Architecture</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <div class="loader-text">AAYI</div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">AAYI</a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link active-page">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-primary">Start a Project</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero (compact) -->
+  <section class="page-hero page-hero-compact">
+    <canvas class="page-hero-canvas" id="contactPageCanvas"></canvas>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-breadcrumb"><a href="index.html">Home</a><span>/</span>Contact</div>
+      <h1 class="page-hero-title">
+        <span class="line">GET IN</span>
+        <span class="line accent">TOUCH</span>
+      </h1>
+      <p class="page-hero-desc">Your next landmark starts with a conversation.</p>
+    </div>
+  </section>
+
+  <!-- Contact Main Section -->
+  <section class="contact-page-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-tag light">Let's Talk</div>
+          <h2 class="contact-title reveal-light">Ready to Build<br/>Something Great?</h2>
+          <p class="reveal-light">Tell us about your project. Our team will respond within 24 hours with a tailored consultation proposal.</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>1200 Industrial Blvd, Suite 500<br/>New York, NY 10001</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span>+1 (212) 555-0147</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <span>projects@AAYI.build</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🕐</span>
+              <span>Mon – Fri: 8:00 AM – 7:00 PM EST<br/>24hr emergency: +1 (212) 555-0199</span>
+            </div>
+          </div>
+          <div class="contact-social-links">
+            <a href="#" class="contact-social">LinkedIn</a>
+            <a href="#" class="contact-social">Twitter</a>
+            <a href="#" class="contact-social">Instagram</a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" placeholder="Your Company" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email *</label>
+                <input type="email" placeholder="john@company.com" required />
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Project Type *</label>
+              <select required>
+                <option value="">Select a service...</option>
+                <option>Commercial Construction</option>
+                <option>Architecture & Design</option>
+                <option>Infrastructure</option>
+                <option>Residential</option>
+                <option>Renovation & Restoration</option>
+                <option>Project Management</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Estimated Budget</label>
+                <select>
+                  <option value="">Select range...</option>
+                  <option>Under $1M</option>
+                  <option>$1M – $10M</option>
+                  <option>$10M – $50M</option>
+                  <option>$50M – $100M</option>
+                  <option>$100M+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Timeline</label>
+                <select>
+                  <option value="">When to start...</option>
+                  <option>Immediately</option>
+                  <option>Within 3 months</option>
+                  <option>3 – 6 months</option>
+                  <option>6 – 12 months</option>
+                  <option>Exploratory</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Project Details</label>
+              <textarea rows="5" placeholder="Describe your project vision, location, key requirements, and any specific challenges or goals..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary large full-width">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Locations -->
+  <section class="offices-section">
+    <div class="container">
+      <div class="section-header center-header">
+        <div class="section-tag">Global Offices</div>
+        <h2 class="section-title reveal">Find Us<br/>Worldwide</h2>
+      </div>
+      <div class="offices-grid">
+        <div class="office-card reveal">
+          <div class="office-city">New York</div>
+          <div class="office-country">United States — HQ</div>
+          <div class="office-address">1200 Industrial Blvd, Suite 500<br/>New York, NY 10001</div>
+          <div class="office-contact">
+            <a href="tel:+12125550147">+1 (212) 555-0147</a>
+            <a href="mailto:nyc@AAYI.build">nyc@AAYI.build</a>
+          </div>
+        </div>
+        <div class="office-card reveal">
+          <div class="office-city">London</div>
+          <div class="office-country">United Kingdom</div>
+          <div class="office-address">88 Cannon Street<br/>London, EC4N 6HT</div>
+          <div class="office-contact">
+            <a href="tel:+442071234567">+44 (0)20 7123 4567</a>
+            <a href="mailto:london@AAYI.build">london@AAYI.build</a>
+          </div>
+        </div>
+        <div class="office-card reveal">
+          <div class="office-city">Dubai</div>
+          <div class="office-country">United Arab Emirates</div>
+          <div class="office-address">DIFC Gate Avenue, Level 14<br/>Dubai, UAE</div>
+          <div class="office-contact">
+            <a href="tel:+97142001234">+971 4 200 1234</a>
+            <a href="mailto:dubai@AAYI.build">dubai@AAYI.build</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-left">
+          <div class="section-tag">FAQ</div>
+          <h2 class="section-title reveal">Common<br/>Questions</h2>
+          <p class="reveal">Can't find what you're looking for? Our team is available Mon–Fri 8AM–7PM EST and will respond to any inquiry within 24 hours.</p>
+          <a href="mailto:projects@AAYI.build" class="btn-ghost" style="margin-top:32px">Email Us Directly</a>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">What is the typical process for starting a project with AAYI?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">We begin with a free 60-minute consultation call to understand your vision, timeline, and budget. From there we prepare a detailed project proposal with preliminary cost estimates, team structure, and a suggested approach. Most projects move from initial consultation to contract signing within 4–6 weeks.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">What is AAYI's minimum project size?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">We typically work on projects with a minimum value of $500,000. For renovation and restoration projects, the minimum is $250,000. For design-only engagements, we offer flexible fee arrangements. We're happy to discuss smaller projects if there's a strong strategic fit.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">Do you work internationally?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Yes. We have delivered projects in 38 countries and have permanent offices in New York, London, and Dubai. Our teams are experienced in navigating international building codes, permitting processes, and local contractor networks across North America, Europe, the Middle East, Asia-Pacific, and Africa.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">How does AAYI handle cost overruns?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">Our 97% on-budget delivery rate reflects our rigorous cost control methodology. We use a proprietary Cost Management Framework with real-time budget tracking, weekly variance reporting, and a defined change management process. Any potential cost change is communicated to clients in advance and requires written approval before proceeding.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">What warranties do you provide?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">All AAYI projects come with a comprehensive 10-year structural warranty, a 5-year systems warranty (MEP, façade, waterproofing), and a 2-year workmanship warranty. We also offer optional extended maintenance contracts for clients who want ongoing professional building management support post-handover.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">What sustainability certifications do you build to?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">We are experienced in delivering projects to LEED (all levels up to Platinum), BREEAM (Excellent and Outstanding), WELL Building Standard, Passive House, and local green building equivalents in markets where we operate. Our sustainability team can advise on the most appropriate certification for your project and budget.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA strip -->
+  <section class="contact-cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h3>Ready to start building?</h3>
+          <p>Our team responds to every inquiry within 24 hours.</p>
+        </div>
+        <div class="cta-strip-buttons">
+          <a href="tel:+12125550147" class="btn-ghost">Call +1 (212) 555-0147</a>
+          <a href="mailto:projects@AAYI.build" class="btn-primary">Email Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">AAYI</a>
+          <p>Building landmarks that define skylines and stand the test of time.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">Li</a>
+            <a href="#" class="social-link">Tw</a>
+            <a href="#" class="social-link">Ig</a>
+            <a href="#" class="social-link">Yt</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html">Commercial Construction</a>
+            <a href="services.html">Architecture & Design</a>
+            <a href="services.html">Infrastructure</a>
+            <a href="services.html">Residential</a>
+            <a href="services.html">Renovation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="about.html#team">Our Team</a>
+            <a href="#">Careers</a>
+            <a href="#">News</a>
+            <a href="about.html#awards">Awards</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Partnerships</a>
+            <a href="contact.html">Media</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 AAYI Construction. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
