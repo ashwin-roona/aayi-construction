@@ -36,7 +36,6 @@ function initAll() {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   initCursor();
   initNav();
-  initHeroCanvas();
   initFeatureCanvas();
   initBlueprintCanvas();
   initStructuralCanvas();
@@ -132,127 +131,6 @@ function initSmoothScroll() {
       e.preventDefault();
       gsap.to(window, { scrollTo: { y: target, offsetY: 80 }, duration: 1.2, ease: 'power3.inOut' });
     });
-  });
-}
-
-/* ── THREE.JS HERO CANVAS ───────────────────── */
-function initHeroCanvas() {
-  const canvas = document.getElementById('heroCanvas');
-  if (!canvas || !window.THREE) return;
-
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
-
-  const scene  = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(60, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
-  camera.position.set(0, 0, 5);
-
-  // Particle field
-  const pCount = 2500;
-  const positions = new Float32Array(pCount * 3);
-  const colors    = new Float32Array(pCount * 3);
-  const sizes     = new Float32Array(pCount);
-
-  for (let i = 0; i < pCount; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * 20;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-
-    const gold = Math.random() > 0.7;
-    colors[i * 3]     = gold ? 0.78 : 0.9;
-    colors[i * 3 + 1] = gold ? 0.66 : 0.9;
-    colors[i * 3 + 2] = gold ? 0.27 : 0.9;
-    sizes[i] = Math.random() * 2 + 0.5;
-  }
-
-  const pGeo = new THREE.BufferGeometry();
-  pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  pGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-  pGeo.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
-
-  const pMat = new THREE.PointsMaterial({
-    size: 0.04,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.7,
-    sizeAttenuation: true,
-  });
-
-  const particles = new THREE.Points(pGeo, pMat);
-  scene.add(particles);
-
-  // Wireframe building silhouette
-  const buildingGroup = new THREE.Group();
-
-  function addBox(w, h, d, x, y, z, col = 0xc8a96e) {
-    const geo  = new THREE.BoxGeometry(w, h, d);
-    const mat  = new THREE.MeshBasicMaterial({ color: col, wireframe: true, transparent: true, opacity: 0.12 });
-    const mesh = new THREE.Mesh(geo, mat);
-    mesh.position.set(x, y, z);
-    buildingGroup.add(mesh);
-  }
-
-  // Skyline silhouette
-  addBox(0.6, 3.5, 0.6,  -3,   -0.75, 0);
-  addBox(0.5, 2.2, 0.5,  -2.2, -1.4,  0);
-  addBox(0.8, 5.0, 0.8,  -1.2, 0.5,   0);
-  addBox(0.4, 1.8, 0.4,  -0.4, -1.6,  0);
-  addBox(1.0, 6.5, 1.0,   0.8, 1.25,  0);
-  addBox(0.5, 2.8, 0.5,   2.0, -1.1,  0);
-  addBox(0.7, 4.2, 0.7,   2.9, 0.1,   0);
-  addBox(0.4, 1.6, 0.4,   3.8, -1.7,  0);
-
-  buildingGroup.position.y = -1.5;
-  scene.add(buildingGroup);
-
-  // Grid plane
-  const gridHelper = new THREE.GridHelper(20, 30, 0xc8a96e, 0x1a1a1a);
-  gridHelper.material.opacity = 0.08;
-  gridHelper.material.transparent = true;
-  gridHelper.position.y = -4;
-  scene.add(gridHelper);
-
-  // Mouse parallax
-  let mouseX = 0, mouseY = 0;
-  document.addEventListener('mousemove', e => {
-    mouseX = (e.clientX / window.innerWidth  - 0.5) * 2;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-  });
-
-  // Animation loop
-  let t = 0;
-  function animate() {
-    requestAnimationFrame(animate);
-    t += 0.003;
-
-    particles.rotation.y = t * 0.05;
-    particles.rotation.x = t * 0.02;
-
-    buildingGroup.rotation.y += (mouseX * 0.08 - buildingGroup.rotation.y) * 0.03;
-    camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.02;
-    camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.02;
-    camera.lookAt(scene.position);
-
-    // Pulse opacity
-    pMat.opacity = 0.5 + Math.sin(t * 0.8) * 0.2;
-
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  // Scroll parallax
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    gsap.to(particles.position, { y: scrollY * 0.003, duration: 0.5 });
-    gsap.to(buildingGroup.position, { y: -1.5 + scrollY * 0.002, duration: 0.5 });
-  });
-
-  // Resize
-  window.addEventListener('resize', () => {
-    camera.aspect = canvas.offsetWidth / canvas.offsetHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
   });
 }
 
@@ -544,7 +422,7 @@ function initContactForm() {
   });
 }
 
-/* ── BLUEPRINT CANVAS (about.html hero) ─────── */
+/* ── HERO CANVAS (about.html hero) ──────────── */
 function initBlueprintCanvas() {
   const canvas = document.getElementById('blueprintCanvas');
   if (!canvas || !window.THREE) return;
@@ -555,109 +433,101 @@ function initBlueprintCanvas() {
 
   const scene  = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
-  camera.position.set(0, 2, 8);
-  camera.lookAt(0, 0, 0);
+  camera.position.set(0, 0, 5);
 
-  const blueMat  = new THREE.LineBasicMaterial({ color: 0x6ab4e8, transparent: true, opacity: 0.25 });
-  const goldMat  = new THREE.LineBasicMaterial({ color: 0xc8a96e, transparent: true, opacity: 0.6 });
-  const dimMat   = new THREE.LineBasicMaterial({ color: 0x9ec8ea, transparent: true, opacity: 0.12 });
+  // Particle field
+  const pCount = 2500;
+  const positions = new Float32Array(pCount * 3);
+  const colors    = new Float32Array(pCount * 3);
 
-  // Blueprint grid
-  const gridGroup = new THREE.Group();
-  for (let i = -10; i <= 10; i++) {
-    const hGeo = new THREE.BufferGeometry().setFromPoints([
-      new THREE.Vector3(-12, i * 0.7, 0),
-      new THREE.Vector3(12, i * 0.7, 0)
-    ]);
-    const vGeo = new THREE.BufferGeometry().setFromPoints([
-      new THREE.Vector3(i * 1.2, -8, 0),
-      new THREE.Vector3(i * 1.2, 8, 0)
-    ]);
-    gridGroup.add(new THREE.Line(hGeo, dimMat));
-    gridGroup.add(new THREE.Line(vGeo, dimMat));
-  }
-  scene.add(gridGroup);
-
-  // Building wireframe outline (architectural drawing style)
-  const buildingLines = new THREE.Group();
-
-  function addLine(x1,y1,z1,x2,y2,z2, mat) {
-    const geo = new THREE.BufferGeometry().setFromPoints([
-      new THREE.Vector3(x1,y1,z1), new THREE.Vector3(x2,y2,z2)
-    ]);
-    buildingLines.add(new THREE.Line(geo, mat));
-  }
-
-  // Main building outline
-  addLine(-2, -3, 0,  2, -3, 0, goldMat);
-  addLine(-2, -3, 0, -2,  4, 0, goldMat);
-  addLine( 2, -3, 0,  2,  4, 0, goldMat);
-  addLine(-2,  4, 0, -0.5, 5.2, 0, goldMat);
-  addLine( 2,  4, 0,  0.5, 5.2, 0, goldMat);
-  addLine(-0.5, 5.2, 0, 0.5, 5.2, 0, goldMat);
-
-  // Floor lines
-  for (let f = -2; f <= 3; f++) {
-    addLine(-2, f, 0, 2, f, 0, blueMat);
-  }
-
-  // Windows grid
-  for (let row = -2; row <= 3; row++) {
-    for (let col = -1; col <= 1; col++) {
-      const x = col * 1.1;
-      const y = row + 0.2;
-      addLine(x-0.3, y, 0.01, x+0.3, y, 0.01, blueMat);
-      addLine(x-0.3, y, 0.01, x-0.3, y+0.55, 0.01, blueMat);
-      addLine(x+0.3, y, 0.01, x+0.3, y+0.55, 0.01, blueMat);
-      addLine(x-0.3, y+0.55, 0.01, x+0.3, y+0.55, 0.01, blueMat);
-    }
-  }
-
-  // Dimension lines
-  addLine(-2, -3.8, 0, 2, -3.8, 0, dimMat);
-  addLine(-2, -3.5, 0, -2, -4.1, 0, dimMat);
-  addLine( 2, -3.5, 0,  2, -4.1, 0, dimMat);
-
-  // Annotation circle
-  const circlePoints = [];
-  for (let i = 0; i <= 64; i++) {
-    const a = (i / 64) * Math.PI * 2;
-    circlePoints.push(new THREE.Vector3(Math.cos(a) * 0.6, Math.sin(a) * 0.6, 0));
-  }
-  const circGeo = new THREE.BufferGeometry().setFromPoints(circlePoints);
-  buildingLines.add(new THREE.Line(circGeo, new THREE.LineBasicMaterial({ color: 0xc8a96e, transparent: true, opacity: 0.35 })));
-
-  scene.add(buildingLines);
-
-  // Particles
-  const pCount = 600;
-  const pPos = new Float32Array(pCount * 3);
   for (let i = 0; i < pCount; i++) {
-    pPos[i*3]   = (Math.random() - 0.5) * 24;
-    pPos[i*3+1] = (Math.random() - 0.5) * 16;
-    pPos[i*3+2] = (Math.random() - 0.5) * 6;
-  }
-  const pGeo = new THREE.BufferGeometry();
-  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-  const pMat = new THREE.PointsMaterial({ color: 0x6ab4e8, size: 0.04, transparent: true, opacity: 0.3 });
-  scene.add(new THREE.Points(pGeo, pMat));
+    positions[i * 3]     = (Math.random() - 0.5) * 20;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
 
-  let mx = 0, my = 0, t = 0;
-  document.addEventListener('mousemove', e => {
-    mx = (e.clientX / window.innerWidth - 0.5);
-    my = (e.clientY / window.innerHeight - 0.5);
+    const gold = Math.random() > 0.7;
+    colors[i * 3]     = gold ? 0.78 : 0.9;
+    colors[i * 3 + 1] = gold ? 0.66 : 0.9;
+    colors[i * 3 + 2] = gold ? 0.27 : 0.9;
+  }
+
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  pGeo.setAttribute('color',    new THREE.BufferAttribute(colors,    3));
+
+  const pMat = new THREE.PointsMaterial({
+    size: 0.04, vertexColors: true,
+    transparent: true, opacity: 0.7, sizeAttenuation: true,
   });
 
+  const particles = new THREE.Points(pGeo, pMat);
+  scene.add(particles);
+
+  // Wireframe skyline silhouette
+  const buildingGroup = new THREE.Group();
+
+  function addBox(w, h, d, x, y, z, col = 0xc8a96e) {
+    const mesh = new THREE.Mesh(
+      new THREE.BoxGeometry(w, h, d),
+      new THREE.MeshBasicMaterial({ color: col, wireframe: true, transparent: true, opacity: 0.12 })
+    );
+    mesh.position.set(x, y, z);
+    buildingGroup.add(mesh);
+  }
+
+  addBox(0.6, 3.5, 0.6,  -3,   -0.75, 0);
+  addBox(0.5, 2.2, 0.5,  -2.2, -1.4,  0);
+  addBox(0.8, 5.0, 0.8,  -1.2,  0.5,  0);
+  addBox(0.4, 1.8, 0.4,  -0.4, -1.6,  0);
+  addBox(1.0, 6.5, 1.0,   0.8,  1.25, 0);
+  addBox(0.5, 2.8, 0.5,   2.0, -1.1,  0);
+  addBox(0.7, 4.2, 0.7,   2.9,  0.1,  0);
+  addBox(0.4, 1.6, 0.4,   3.8, -1.7,  0);
+
+  buildingGroup.position.y = -1.5;
+  scene.add(buildingGroup);
+
+  // Ground grid
+  const gridHelper = new THREE.GridHelper(20, 30, 0xc8a96e, 0x1a1a1a);
+  gridHelper.material.opacity = 0.08;
+  gridHelper.material.transparent = true;
+  gridHelper.position.y = -4;
+  scene.add(gridHelper);
+
+  // Mouse parallax
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth  - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  // Animation loop
+  let t = 0;
   function animate() {
     requestAnimationFrame(animate);
     t += 0.003;
-    buildingLines.rotation.y += (mx * 0.15 - buildingLines.rotation.y) * 0.03;
-    gridGroup.rotation.y += (mx * 0.05 - gridGroup.rotation.y) * 0.02;
-    camera.position.y += (-my * 0.8 + 2 - camera.position.y) * 0.03;
+
+    particles.rotation.y = t * 0.05;
+    particles.rotation.x = t * 0.02;
+
+    buildingGroup.rotation.y += (mouseX * 0.08 - buildingGroup.rotation.y) * 0.03;
+    camera.position.x += (mouseX * 0.5  - camera.position.x) * 0.02;
+    camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.02;
+    camera.lookAt(scene.position);
+
+    pMat.opacity = 0.5 + Math.sin(t * 0.8) * 0.2;
     renderer.render(scene, camera);
   }
   animate();
 
+  // Scroll parallax
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    gsap.to(particles.position,    { y: s * 0.003, duration: 0.5 });
+    gsap.to(buildingGroup.position, { y: -1.5 + s * 0.002, duration: 0.5 });
+  });
+
+  // Resize
   window.addEventListener('resize', () => {
     camera.aspect = canvas.offsetWidth / canvas.offsetHeight;
     camera.updateProjectionMatrix();
